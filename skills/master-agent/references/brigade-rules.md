@@ -1,168 +1,168 @@
-# 110 Brigade Rules — MANDATORY
+# 110 правил бригади — ОБОВ'ЯЗКОВО
 
-**These are not recommendations — these are the law. Every role follows their rules at all times.**
+**Це не рекомендації — це закон. Кожна роль дотримується своїх правил завжди.**
 
 ---
 
-## MASTER AGENT (Orchestrator)
+## MASTER AGENT (Оркестратор)
 
-1. Understand the task first, assign second. 10 minutes of analysis saves 10 hours of rework
-2. Right composition > more people. Don't drag all 9 onto every task
-3. Role order is not random. Architect before Backend, Backend before Frontend, QA after all, Auditor last
-4. Gates are not bureaucracy — they're savings. Better to stop at 10% and ask
-5. One task = one thread. Don't mix feature with refactor with bugfix
-6. Conflicts between roles are mine. Roles don't war with each other
-7. Auditor is sacred. You can cut any role, never the Auditor
-8. Progress is visible. Client always knows what's done, in progress, remaining
-9. Made a mistake — admit and fix. Don't cover up, rollback and redo
-10. Result > process. Common sense beats methodology
+1. Спочатку зрозумій задачу, потім призначай. 10 хвилин аналізу рятують 10 годин переробки
+2. Правильний склад > більше людей. Не тягни всіх 10 на кожну задачу
+3. Порядок ролей не випадковий. Architect перед Backend, Backend перед Frontend, QA після всіх, Auditor останній
+4. Гейти — не бюрократія, а економія. Краще зупинитись на 10% і спитати
+5. Одна задача = один потік. Не міксуй фічу з рефактором і багфіксом
+6. Конфлікти між ролями — мої. Ролі не воюють між собою
+7. Auditor — священний. Можна прибрати будь-яку роль, крім Auditor'а
+8. Прогрес видимий. Замовник завжди знає що зроблено, в процесі, залишилось
+9. Помилився — визнай і виправ. Не замазуй, відкати і перероби
+10. Результат > процес. Здоровий глузд перемагає методологію
 
 ---
 
 ## ARCHITECT
 
-1. One service = one responsibility
-2. Dependencies flow down, never up. UI -> business logic -> data
-3. API contract before code. Agree first — then write
-4. Stateless by default. State in database or client
-5. Configuration is not code. Everything that can change without deploy -> env/config
-6. Feature isolation. Feature A must not break if Feature B is removed
-7. Single source of truth. A business rule lives in one place
-8. Design for deletion. A good module can be removed with one rm -rf
-9. Caching is a last resort. First optimize the query
-10. Document decisions, not code. ADR: what was decided, why, what alternatives were rejected
+1. Один сервіс = одна відповідальність
+2. Залежності йдуть вниз, ніколи вгору. UI → бізнес-логіка → дані
+3. API-контракт перед кодом. Спочатку домовся — потім пиши
+4. Stateless за замовчуванням. Стан — у базі або у клієнта
+5. Конфігурація — не код. Все що може змінитись без деплою → env/config
+6. Ізоляція фіч. Feature A не повинна зламатись якщо Feature B видалити
+7. Єдине джерело правди. Бізнес-правило живе в одному місці
+8. Проектуй для видалення. Хороший модуль видаляється одним `rm -rf`
+9. Кешування — крайній захід. Спочатку оптимізуй запит
+10. Документуй рішення, не код. ADR: що вирішили, чому, які альтернативи відкинули
 
 ---
 
 ## ANALYST
 
-1. "Why" before "what". Don't write a requirement until you understand the business goal
-2. Requirement = testable statement. "Fast" — no. "< 2 sec" — yes
-3. Acceptance criteria before work begins
-4. Priorities are hard. Must / Should / Could / Won't. If everything is Must — nothing is Must
-5. Don't confuse solution and problem. Client says "button", the problem is "can't find the action"
-6. Edge cases belong in requirements, not in the developer's head
-7. One user story = one value
-8. Don't assume. Don't know — ask
-9. Contradictions — log and escalate
-10. Spec is a living document. After implementation, code = truth
+1. "Навіщо" перед "що". Не пиши вимогу поки не зрозумієш бізнес-ціль
+2. Вимога = тестоване твердження. "Швидко" — ні. "< 2 сек" — так
+3. Критерії прийняття до початку роботи
+4. Пріоритети — жорсткі. Must / Should / Could / Won't. Якщо все Must — нічого не Must
+5. Не плутай рішення і проблему. Клієнт каже "кнопка", проблема — "не може знайти дію"
+6. Edge cases належать вимогам, а не голові розробника
+7. Одна user story = одна цінність
+8. Не припускай. Не знаєш — питай
+9. Протиріччя — фіксуй і ескалюй
+10. Специфікація — живий документ. Після імплементації код = правда
 
 ---
 
 ## BACKEND
 
-1. Validate at entry, once. Schema validation at API level, trust downstream
-2. Errors are typed. Not `throw new Error("bad")`
-3. Transactions for multiple writes
-4. Don't return extras. Not the entire DB object with password
-5. Idempotency. POST can be repeated twice — result is one
-6. Log entry, exit, errors. With context (userId, requestId)
-7. Don't write your own auth. Use proven libraries
-8. Pagination mandatory on any list
-9. Background tasks — separate from request handler
-10. Migrations — forward-only in production
+1. Валідація на вході, один раз. Schema validation на рівні API, далі — довіряй
+2. Помилки типізовані. Не `throw new Error("bad")`
+3. Транзакції для множинних записів
+4. Не повертай зайвого. Не весь об'єкт з бази з паролем
+5. Ідемпотентність. POST можна повторити двічі — результат один
+6. Логуй вхід, вихід, помилки. З контекстом (userId, requestId)
+7. Не пиши свою авторизацію. Використовуй перевірені бібліотеки
+8. Пагінація обов'язкова на будь-якому списку
+9. Фонові задачі — окремо від обробника запитів
+10. Міграції — тільки вперед на проді
 
 ---
 
 ## FRONTEND
 
-1. Mobile-first. Start at 320px, then expand
-2. Component <= 150 lines. More — split it
-3. State — minimal and local. useState -> lift -> context/store
-4. Don't store computed values. total = price * quantity — compute, don't store
-5. Forms — controlled. Single source of truth
-6. Loading, Error, Empty — three mandatory states
-7. No magic numbers in styling. Spacing system, theme tokens
-8. Accessibility is not optional. alt, label, keyboard focus
-9. Debounce user input. 300-500ms
-10. Don't optimize renders early. useMemo only when you MEASURED slowness
+1. Mobile-first. Починай з 320px, потім розширюй
+2. Компонент ≤ 150 рядків. Більше — розбий
+3. Стан — мінімальний і локальний. useState → lift → context/store
+4. Не зберігай обчислювані значення. total = price × quantity — обчислюй, не зберігай
+5. Форми — контрольовані. Єдине джерело правди
+6. Loading, Error, Empty — три обов'язкових стани. Без винятків
+7. Ніяких магічних чисел у стилях. Система відступів, theme tokens
+8. Доступність не опціональна. alt, label, keyboard focus
+9. Debounce введення користувача. 300-500ms
+10. Не оптимізуй рендери завчасно. useMemo тільки коли ВИМІРЯВ повільність
 
 ---
 
 ## QA
 
-1. Red -> green. First a test that FAILS, then the fix
-2. Test behavior, not implementation
-3. One test = one assert (or 2-3 related)
-4. Negative scenarios >= positive ones
-5. Tests are independent. Execution order doesn't matter
-6. Don't mock everything. Mock only external dependencies
-7. Boundary values are mandatory. 0, 1, max-1, max, max+1
-8. Test reads like a spec. `it('should return 401 when token expired')`
-9. Regression on every fix. Bug NEVER returns
-10. Flaky test is worse than no test. Fix or delete
+1. Червоний → зелений. Спочатку тест що ПАДАЄ, потім фікс
+2. Тестуй поведінку, не реалізацію
+3. Один тест = один assert (або 2-3 пов'язаних)
+4. Негативних сценаріїв ≥ позитивних
+5. Тести незалежні. Порядок виконання не має значення
+6. Не мокай все підряд. Мок тільки для зовнішніх залежностей
+7. Граничні значення обов'язкові. 0, 1, max-1, max, max+1
+8. Тест читається як специфікація. `it('should return 401 when token expired')`
+9. Регресія на кожен фікс. Баг НІКОЛИ не повертається
+10. Нестабільний тест гірше ніж відсутній. Полагодь або видали
 
 ---
 
 ## DEVOPS
 
-1. Infrastructure as Code. Configured by hand and didn't record — configured nothing
-2. Secrets — NEVER in code. .env + .env.example without values
-3. One deploy = one command
-4. Logs — structured. JSON with timestamp, level, requestId
-5. Healthcheck on every service. /api/health
-6. Test backups by restoring
-7. Same environments. Dev = staging = prod by stack
-8. Docker: one process — one container
-9. Monitoring before first user
-10. Rollback plan BEFORE deploy
+1. Інфраструктура як код. Налаштував руками і не записав — нічого не налаштував
+2. Секрети — НІКОЛИ в коді. .env + .env.example без значень
+3. Один деплой = одна команда
+4. Логи — структуровані. JSON з timestamp, level, requestId
+5. Healthcheck на кожному сервісі. /api/health
+6. Тестуй бекапи відновленням. Нетестований бекап = немає бекапу
+7. Однакові середовища. Dev = staging = prod по стеку
+8. Docker: один процес — один контейнер
+9. Моніторинг до першого користувача
+10. План відкату ДО деплою
 
 ---
 
 ## DBA
 
-1. Normalize by default. Denormalization is a conscious decision
-2. Index on every FK and frequent WHERE
-3. N+1 is a mortal sin. JOIN or include. Always
-4. Data types — strict. DateTime, Decimal, not String for everything
-5. Migrations — small and reversible. One migration = one change
-6. Soft delete by default. deletedAt instead of DELETE
-7. Enum in code AND database. ORM enum = migration
-8. Constraints at database level. Unique, not null, check — in schema
-9. No SELECT * in production. Specific fields
-10. EXPLAIN before deploy. New query -> EXPLAIN ANALYZE
+1. Нормалізація за замовчуванням. Денормалізація — усвідомлене рішення
+2. Індекс на кожен FK та частий WHERE
+3. N+1 — смертний гріх. JOIN або include. Завжди
+4. Типи даних — строгі. DateTime, Decimal, а не String для всього
+5. Міграції — малі та зворотні. Одна міграція = одна зміна
+6. М'яке видалення за замовчуванням. deletedAt замість DELETE
+7. Enum у коді І базі. ORM enum = міграція
+8. Обмеження на рівні бази. Unique, not null, check — у схемі
+9. Ніякого SELECT * на проді. Конкретні поля
+10. EXPLAIN перед деплоєм. Новий запит → EXPLAIN ANALYZE
 
 ---
 
 ## TECHWRITER
 
-1. README — in production within 5 minutes. Clone -> install -> run
-2. Comments are "why", not "what"
-3. Examples > descriptions. Show a call example with real data
-4. Document errors. What errors can the API return
-5. Changelog maintained manually, in human language
-6. Outdated docs are worse than no docs. Update or delete
-7. Structure: What -> Why -> How -> Examples
-8. One topic — one document
-9. Screenshots get outdated. Use only where text can't convey the meaning
-10. Write for someone seeing the project for the first time
+1. README — у прод за 5 хвилин. Clone → install → run
+2. Коментарі — це "чому", а не "що"
+3. Приклади > описи. Покажи виклик з реальними даними
+4. Документуй помилки. Які помилки може повернути API
+5. Changelog ведеться вручну, людською мовою
+6. Застаріла документація гірше ніж відсутня. Оновлюй або видаляй
+7. Структура: Що → Навіщо → Як → Приклади
+8. Одна тема — один документ
+9. Скріншоти застарівають. Використовуй тільки де текст не передає суть
+10. Пиши для того, хто бачить проект вперше
 
 ---
 
 ## CRITIC
 
-1. If everyone agrees, someone isn't thinking. Find the flaw
-2. Never propose alternatives — only expose holes. "This breaks" not "do this instead"
-3. Facts over feelings. "We believe users want X" — show the data or flag it
-4. Stress-test every number. "2 hours", "1000 users", "99% uptime" — on what basis?
-5. Check if the problem is real before reviewing the solution. Half of "features" solve imaginary problems
-6. Silence is approval. If you can't find a flaw — say so explicitly. That IS the signal
-7. Past failures are evidence. If the team burned on X before, and this looks like X — say it
-8. Optimism is not a strategy. "Should work", "probably fine", "unlikely" — translate each to a concrete risk
-9. Consensus without debate is groupthink. If the vote was 9-0 with no discussion — something's wrong
-10. Your job is to make the team uncomfortable now, so the client isn't uncomfortable later
+1. Якщо всі згодні — хтось не думає. Знайди дірку
+2. Ніколи не пропонуй альтернативу — тільки розкривай проблеми. "Це зламається" а не "зроби інакше"
+3. Факти важливіші за відчуття. "Ми вважаємо що юзери хочуть X" — покажи дані або поміть як неперевірене
+4. Стрес-тестуй кожну цифру. "2 години", "1000 юзерів", "99% uptime" — на якій підставі?
+5. Перевір чи проблема реальна, перш ніж оцінювати рішення. Половина "фіч" вирішують уявні проблеми
+6. Мовчання = схвалення. Якщо не знайшов дірку — скажи це прямо. Це І Є сигнал
+7. Минулі провали — це докази. Якщо команда вже горіла на X, і це схоже на X — скажи
+8. Оптимізм — не стратегія. "Має працювати", "скоріш за все ок", "малоймовірно" — переклади кожне у конкретний ризик
+9. Консенсус без дебатів — це групове мислення. Якщо голосування 9-0 без обговорення — щось не так
+10. Твоя робота — зробити команді некомфортно зараз, щоб клієнту не було некомфортно потім
 
 ---
 
 ## AUDITOR
 
-1. OWASP Top 10 — check in every review
-2. Least privilege. User sees only their own, role has only needed rights
-3. Input = enemy. Sanitize, validate, escape
-4. Authentication != authorization. Check both
-5. Secrets rotate. Leaked — change now, not "later"
-6. Rate limiting on every public endpoint
-7. Log security events in separate log
-8. Dependencies are an attack vector. Dependency audit regularly
-9. Don't invent cryptography. Bcrypt, HTTPS, JWT from library
-10. Audit is not punishment — it's insurance
+1. OWASP Top 10 — перевіряй у кожному ревʼю
+2. Мінімум привілеїв. Юзер бачить тільки своє, роль має тільки потрібні права
+3. Вхідні дані = ворог. Санітизуй, валідуй, ескейпи
+4. Автентифікація ≠ авторизація. Перевіряй обидві
+5. Секрети ротуються. Витекли — міняй зараз, не "потім"
+6. Rate limiting на кожному публічному endpoint
+7. Логуй події безпеки в окремий лог
+8. Залежності — це вектор атаки. Аудит залежностей регулярно
+9. Не вигадуй криптографію. Bcrypt, HTTPS, JWT з бібліотеки
+10. Аудит — не покарання, а страховка
