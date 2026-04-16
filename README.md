@@ -2,12 +2,12 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://docs.anthropic.com/en/docs/claude-code)
-[![Roles](https://img.shields.io/badge/Roles-9%20permanent%20%2B%20∞%20dynamic-green)]()
+[![Roles](https://img.shields.io/badge/Roles-10%20permanent%20%2B%20∞%20dynamic-green)]()
 [![Rules](https://img.shields.io/badge/Rules-100%20mandatory-red)]()
 
-> One AI. Nine specialists. Zero excuses.
+> One AI. Ten specialists. Zero excuses.
 
-**Master Agent** is a Claude Code skill that transforms a single AI conversation into a coordinated team of 9 permanent roles + unlimited dynamic experts. Instead of giving Claude vague instructions and hoping for the best, you get a structured development pipeline with mandatory audits, quality gates, and a sarcastic team lead who's seen it all.
+**Master Agent** is a Claude Code skill that transforms a single AI conversation into a coordinated team of 10 permanent roles + unlimited dynamic experts. Instead of giving Claude vague instructions and hoping for the best, you get a structured development pipeline with mandatory audits, quality gates, and a sarcastic team lead who's seen it all.
 
 ---
 
@@ -81,7 +81,7 @@ You: just do it
 When you say `/master-agent`, Claude becomes a **Senior Architect with 20 years of experience** who:
 
 1. **Analyzes** your task and assembles the right team
-2. **Orchestrates** 9 specialized roles in the right order
+2. **Orchestrates** 10 specialized roles in the right order
 3. **Routes** subtasks to optimal models (haiku/sonnet/opus) to save tokens
 4. **Enforces** a 10-step deployment pipeline with mandatory security audit
 5. **Delivers** a structured report with audit results
@@ -100,7 +100,8 @@ No role is skipped. No shortcut is taken. The Auditor always has the final word.
 | 6 | **DevOps** | Docker, CI/CD, deploy, monitoring, infrastructure |
 | 7 | **DBA** | Schema design, migrations, indexes, query optimization |
 | 8 | **TechWriter** | README, API docs, changelog, user guides |
-| 9 | **Auditor** | Independent security & quality audit. **Never skipped.** |
+| 9 | **Critic** | Devil's advocate. Challenges assumptions, kills wishful thinking. **Always opposes consensus.** |
+| 10 | **Auditor** | Independent security & quality audit. **Never skipped.** |
 
 Plus **unlimited dynamic experts** generated on-the-fly: CFO, Legal, ML Engineer, UX Designer, Industry Specialist — whatever the task demands.
 
@@ -129,7 +130,7 @@ Every change goes through ALL 10 steps. No exceptions.
  6. Security       — no critical/high vulnerabilities
  7. Env            — no missing variables
  8. Migrations     — nothing pending
- 9. 9-Agent Audit  — all roles review in parallel
+ 9. 10-Agent Audit — all roles review in parallel
 10. Deploy         — with explicit approval
 ```
 
@@ -147,6 +148,7 @@ Each of the 10 roles follows 10 strict rules. Not guidelines — **rules**:
 | **DevOps** | "Test backups by restoring. Untested backup = no backup" |
 | **DBA** | "N+1 is a mortal sin. JOIN or include. Always" |
 | **TechWriter** | "Outdated docs are worse than no docs. Update or delete" |
+| **Critic** | "If everyone agrees, someone isn't thinking. Find the flaw" |
 | **Auditor** | "Input = enemy. Sanitize, validate, escape" |
 
 Full list in [`brigade-rules.md`](skills/master-agent/references/brigade-rules.md).
@@ -254,7 +256,7 @@ claude-code-master-agent/
     └── master-agent/
         ├── SKILL.md                   # Main orchestrator prompt
         └── references/
-            ├── core-roles.md          # 9 permanent role definitions
+            ├── core-roles.md          # 10 permanent role definitions
             ├── role-generator.md      # Dynamic expert generation system
             ├── workflows.md           # 10 standard workflows (WF-1..WF-10)
             └── brigade-rules.md       # 100 mandatory rules (10 per role)
@@ -284,7 +286,7 @@ Or modify the Smart Router section in `SKILL.md`.
 
 This skill was forged over 40+ production sessions building real SaaS products (CRM, SCADA, commercial proposal generators):
 
-- **9-agent parallel audits** caught bugs that unit tests missed — dead RBAC code that passed 26 unit tests but had never been migrated to the actual database
+- **10-agent parallel audits** (including a dedicated Critic/Devil's Advocate) caught bugs that unit tests missed — dead RBAC code that passed 26 unit tests but had never been migrated to the actual database
 - **"Red test first" rule** prevented dozens of false-positive "fixes" where the code changed but nothing actually got better
 - **Smart routing** saved ~50% tokens on average without quality degradation — haiku handles grep just fine
 - **Dynamic experts** (energy engineers, financial analysts, tariff specialists) provided domain accuracy that generic prompts couldn't match
