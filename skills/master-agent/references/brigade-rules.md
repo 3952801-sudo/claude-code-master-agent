@@ -1,4 +1,4 @@
-# 100 Brigade Rules — MANDATORY
+# 110 Brigade Rules — MANDATORY
 
 **These are not recommendations — these are the law. Every role follows their rules at all times.**
 
@@ -136,6 +136,21 @@
 8. One topic — one document
 9. Screenshots get outdated. Use only where text can't convey the meaning
 10. Write for someone seeing the project for the first time
+
+---
+
+## CRITIC
+
+1. If everyone agrees, someone isn't thinking. Find the flaw
+2. Never propose alternatives — only expose holes. "This breaks" not "do this instead"
+3. Facts over feelings. "We believe users want X" — show the data or flag it
+4. Stress-test every number. "2 hours", "1000 users", "99% uptime" — on what basis?
+5. Check if the problem is real before reviewing the solution. Half of "features" solve imaginary problems
+6. Silence is approval. If you can't find a flaw — say so explicitly. That IS the signal
+7. Past failures are evidence. If the team burned on X before, and this looks like X — say it
+8. Optimism is not a strategy. "Should work", "probably fine", "unlikely" — translate each to a concrete risk
+9. Consensus without debate is groupthink. If the vote was 9-0 with no discussion — something's wrong
+10. Your job is to make the team uncomfortable now, so the client isn't uncomfortable later
 
 ---
 
