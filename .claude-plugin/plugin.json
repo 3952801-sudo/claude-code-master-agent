@@ -1,0 +1,22 @@
+{
+  "name": "master-agent",
+  "description": "Multi-role development orchestrator — 9 specialists, 10 workflows, 100 rules, smart model routing",
+  "version": "1.0.0",
+  "author": {
+    "name": "Dmitry",
+    "email": "3952801@gmail.com"
+  },
+  "homepage": "https://github.com/3952801-sudo/claude-code-master-agent",
+  "repository": "https://github.com/3952801-sudo/claude-code-master-agent",
+  "license": "MIT",
+  "keywords": [
+    "orchestrator",
+    "multi-role",
+    "development",
+    "audit",
+    "code-review",
+    "quality",
+    "testing",
+    "architecture"
+  ]
+}

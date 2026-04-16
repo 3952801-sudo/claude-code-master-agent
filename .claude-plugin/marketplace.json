@@ -1,0 +1,30 @@
+{
+  "name": "master-agent-marketplace",
+  "owner": {
+    "name": "Dmitry",
+    "email": "3952801@gmail.com"
+  },
+  "metadata": {
+    "description": "Master Agent — multi-role AI development orchestrator with 9 permanent roles, 10 workflows, 100 mandatory rules, and smart model routing for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "master-agent",
+      "source": "./",
+      "description": "Multi-role development orchestrator — 9 specialists, 10 workflows, 100 rules, smart model routing",
+      "version": "1.0.0",
+      "category": "development",
+      "tags": [
+        "orchestrator",
+        "multi-role",
+        "audit",
+        "code-review",
+        "quality",
+        "testing",
+        "architecture",
+        "workflow"
+      ]
+    }
+  ]
+}
